@@ -31,12 +31,35 @@ const accordData = [
 const PageWhyus = () => {
     return (
         <div className=' h-screen max-h-screen max-w-screen flex flex-col justify-around items-center '>
-            <RootWrapper className=' lg:items-center w-8/12'>
+            <RootWrapper className=' w-11/12 lg:items-center md:w-8/12'>
                 <HeadWrapper line={true} className=' text-center items-center'>Why Us</HeadWrapper>
                 <BodyWrapper className=''>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</BodyWrapper>
             </RootWrapper>
-            {/* CHANGE - change the below div to grid bcoz while playing with accordion the images are moving up and down as the height of accordion changes */}
-            <div className=' w-full flex flex-col justify-start items-end lg:flex-row '>
+            <div className=' h-3/5 flex flex-col max-h-screen lg:grid lg:grid-cols-2 justify-between items-center '>
+                <div className=' h-full w-11/12 lg:flex lg:justify-start lg:items-end lg:relative '>
+                    <Image className=' ' alt='ppl img' src="/about_ppl.jpg" width={400} height={210} />
+                    <Image className=' lg:absolute lg:bottom-20 lg:left-40' alt='flag img' src="/about_flag.jpg" width={500} height={350} />
+                </div>
+                <div className=' h-full w-11/12  '>
+                    {
+                        <Accordion type='single' defaultValue='item-0' > 
+                        {/* NOTE - if collapsible is added the width of this div is decrease when all are collapsed and root div srinks */}
+                            {
+                                accordData.map((item, key) => {
+                                    return (
+                                        <AccordionItem value={`item-${key}`} key={key}>
+                                            <AccordionTrigger>{item.title}</AccordionTrigger>
+                                            <AccordionContent>{item.desc}</AccordionContent>
+                                        </AccordionItem>
+                                    )
+                                })
+                            }
+                        </Accordion>
+                    }
+                </div>
+            </div>
+
+            {/* <div className=' w-full flex flex-col justify-start items-end lg:flex-row '>
                 <div className=' lg:relative w-full lg:w-7/12'>
                     <Image className=' ' alt='ppl img' src="/about_ppl.jpg" width={400} height={210} />
                     <Image className=' lg:absolute lg:bottom-10 lg:left-40' alt='flag img' src="/about_flag.jpg" width={500} height={350} />
@@ -57,7 +80,7 @@ const PageWhyus = () => {
                         </Accordion>
                     }
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
