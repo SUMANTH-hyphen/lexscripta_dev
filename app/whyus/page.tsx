@@ -30,17 +30,17 @@ const accordData = [
 
 const PageWhyus = () => {
     return (
-        <div className=' h-screen max-h-screen max-w-screen flex flex-col justify-around items-center '>
+        <div className=' min-h-screen max-w-screen flex flex-col justify-evenly items-center '>
             <RootWrapper className=' w-11/12 lg:items-center md:w-8/12'>
                 <HeadWrapper line={true} className=' text-center items-center'>Why Us</HeadWrapper>
                 <BodyWrapper className=''>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</BodyWrapper>
             </RootWrapper>
-            <div className=' h-3/5 flex flex-col max-h-screen lg:grid lg:grid-cols-2 justify-between items-center '>
-                <div className=' h-full w-11/12 lg:flex lg:justify-start lg:items-end lg:relative '>
+            <div className=' flex flex-col items-center justify-center lg:h-[60vh] lg:grid lg:grid-cols-2 '>
+                <div className=' w-11/12 lg:flex lg:flex-col lg:justify-end lg:h-full lg:items-start lg:relative '>
                     <Image className=' ' alt='ppl img' src="/about_ppl.jpg" width={400} height={210} />
                     <Image className=' lg:absolute lg:bottom-20 lg:left-40' alt='flag img' src="/about_flag.jpg" width={500} height={350} />
                 </div>
-                <div className=' h-full w-11/12  '>
+                <div className=' w-11/12 lg:h-full lg:flex lg:flex-col lg:justify-center lg:items-center '>
                     {
                         <Accordion type='single' defaultValue='item-0' > 
                         {/* NOTE - if collapsible is added the width of this div is decrease when all are collapsed and root div srinks */}
@@ -58,29 +58,6 @@ const PageWhyus = () => {
                     }
                 </div>
             </div>
-
-            {/* <div className=' w-full flex flex-col justify-start items-end lg:flex-row '>
-                <div className=' lg:relative w-full lg:w-7/12'>
-                    <Image className=' ' alt='ppl img' src="/about_ppl.jpg" width={400} height={210} />
-                    <Image className=' lg:absolute lg:bottom-10 lg:left-40' alt='flag img' src="/about_flag.jpg" width={500} height={350} />
-                </div>
-                <div className=' w-11/12 lg:w-4/12 lg:mb-10'>
-                    {
-                        <Accordion type='single' defaultValue='item-0' collapsible>
-                            {
-                                accordData.map((item, key) => {
-                                    return (
-                                        <AccordionItem value={`item-${key}`} key={key}>
-                                            <AccordionTrigger>{item.title}</AccordionTrigger>
-                                            <AccordionContent>{item.desc}</AccordionContent>
-                                        </AccordionItem>
-                                    )
-                                })
-                            }
-                        </Accordion>
-                    }
-                </div>
-            </div> */}
         </div>
     )
 }

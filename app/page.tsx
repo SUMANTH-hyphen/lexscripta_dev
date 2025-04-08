@@ -2,6 +2,7 @@ import NavbarCC from "@/components/ui/heroui/navbar";
 import PageAbout from "./about/page";
 import PageHome from "./home/page";
 import PageWhyus from "./whyus/page";
+import PageAreas from "./areas/page";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <PageHome />
         <PageAbout />
         <PageWhyus />
+        <PageAreas />
       </div>
     </div>
   );

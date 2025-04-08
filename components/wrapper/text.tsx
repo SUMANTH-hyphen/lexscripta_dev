@@ -15,7 +15,7 @@ export const PageHeadWrapper = ({ className, children }: { className?: string, c
 export const HeadWrapper = ({ className, children, line }: { className?: string, children?: ReactNode, line?: boolean }) => {
 
     return ( // cn() is used to insert new styles with default styles, className styles can overwrite the default styles given 
-        <div className={cn(" text-black text-3xl font-extralight flex flex-col items-center justify-center md:text-4xl md:font-light  ", className)}>
+        <div className={cn(" text-black text-3xl font-extralight flex flex-col items-center justify-center md:text-3xl md:font-light  ", className)}>
             {
                 line ? (
                     <div className=" w-14 h-0.5 bg-[#1D82FF] mb-5"></div>
@@ -40,7 +40,7 @@ export const SubHeadWrapper = ({ className, children }: { className?: string, ch
 export const BodyWrapper = ({ className, children }: { className?: string, children?: ReactNode }) => {
 
     return ( // cn() is used to insert new styles with default styles, className styles can overwrite the default styles given 
-        <div className={cn(" text-gray-700 text-base text-center font-light md:text-xl md:font-light ", className)}>
+        <div className={cn(" text-gray-700 text-base text-center font-light md:text-lg md:font-light ", className)}>
             {children}
         </div>
     )
